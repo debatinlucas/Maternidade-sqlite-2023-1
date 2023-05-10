@@ -122,7 +122,8 @@ public class EditarFragment extends Fragment {
         } else if (etDataNascimento.getText().toString().equals("")) {
             Toast.makeText(getActivity(), "Por favor, informe a data de nascimento!", Toast.LENGTH_LONG).show();
         } else {
-            m = new Mae();
+            DatabaseHelper databaseHelper = new DatabaseHelper(getActivity());
+            Mae m = new Mae();
             m.setId(id);
             m.setNome(etNome.getText().toString());
             m.setLogradouro(etLogradouro.getText().toString());
